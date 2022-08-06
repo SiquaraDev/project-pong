@@ -9,16 +9,25 @@
     <title>Pong Game</title>
 </head>
 <body>
-    <div class="keys_box">
-            <p class="key">W</p>
-            <p class="key">S</p>
+    <div class="box">
+        <p class="text">Press Enter to start a match.</p>
+        <p class="text">Press R to restart a match.</p>
     </div>
-
-    <canvas id="canvas" width="900" height="500"></canvas>
-
-    <div class="keys_box">
-        <p class="key">↑</p>
-        <p class="key">↓</p>
+    <div class="center_box">
+        <div class="keys_box">
+                <p class="key">W</p>
+                <p class="key">S</p>
+        </div>
+    
+        <canvas id="canvas-pong" width="900" height="500"></canvas>
+    
+        <div class="keys_box">
+            <p class="key">↑</p>
+            <p class="key">↓</p>
+        </div>
+    </div>
+    <div class="box">
+        <p class="text">Whoever scores 5 points first wins.</p>
     </div>
     <script src="./scripts/pong.js"></script>
 </body>
