@@ -29,15 +29,14 @@ export function setup() {
 
 function loop() {
     
-    checkBallColliding();
+    draw();    
     
     if (ball_in_game) {
         setBallMoveSpeed(); 
         setPlayersMoveSpeed();
+        checkBallColliding();
         checkPoint();
     }
-
-    draw();    
 }
 
 function draw() {
@@ -61,7 +60,7 @@ function draw() {
     writePoints();
 
     if (p1_points >= 5 || p2_points >= 5) {
-        drawWinner();
+        writeWinner();
     }
 }
 
@@ -82,7 +81,7 @@ function writePoints() {
     ctx.fillText(p2_points, 3*(W/4) - 25, 50);
 }
 
-function drawWinner() {
+function writeWinner() {
     ctx.font = "40px monospace";
     
     if (p1_points > p2_points) {
@@ -143,7 +142,7 @@ function setPlayersMoveSpeed() {
 
 function checkPoint() {
 
-    if (ball_x + 10 > W) {
+    if (ball_x + 5 > W) {
         p1_points++;
         ball_in_game = false;
         ResetAllPos();
